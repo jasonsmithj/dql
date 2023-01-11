@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  dql:
+    image: dql
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      AWS_SDK_LOAD_CONFIG: true
+      AWS_PROFILE: ${AWS_PROFILE}
+    volumes:
+      - ./workdir:/app
+      - ~/.aws:/root/.aws
